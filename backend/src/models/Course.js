@@ -1,4 +1,3 @@
-import express from "express";
 import mongoose from "mongoose";
 
 const {Schema, model} = mongoose;
@@ -84,6 +83,6 @@ const CourseSchema = new Schema(
     }
 );
 
-const Course = model("Course", CourseSchema);
+const Course = model("Course", CourseSchema, "courses");
 
 export default Course;
