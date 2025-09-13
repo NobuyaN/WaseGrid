@@ -1,20 +1,26 @@
-import React from 'react'
-import { Route, Routes} from "react-router";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import HomePage from './pages/HomePage.jsx';
 import CreatePage from './pages/CreatePage.jsx';
 import NoteDetailPage from './pages/NoteDetailPage';
-import { toast } from 'react-hot-toast';
+import CourseSearchPage from './pages/CourseSearchPage.jsx';
+import TimeGridPage from './pages/TimeGridPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+
+const router = createBrowserRouter([
+    {path: "/", element: <HomePage />},
+    {path: "/create", element: <CreatePage />},
+    {path: "/note/:id", element: <NoteDetailPage />},
+    {path: "/courses", element: <CourseSearchPage />},
+    {path: "/timegrid", element: <TimeGridPage />},
+    {path: "*", element: <NotFoundPage />},
+]);
 
 const App = () => {
   return (
     <div data-theme="forest">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/create" element={<CreatePage />} />
-        <Route path="/note/:id" element={<NoteDetailPage />} />
-      </Routes>
+      <RouterProvider router={router} />
     </div>
   )
-}
+};
 
-export default App
+export default App;
