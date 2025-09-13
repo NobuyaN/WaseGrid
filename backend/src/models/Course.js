@@ -78,7 +78,6 @@ const CourseSchema = new Schema(
         slots: {type: [SlotSchema], default: () => []},
     },
     {
-        timestamps: true,
         strict: true
     }
 );
