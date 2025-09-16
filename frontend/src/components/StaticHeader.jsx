@@ -8,12 +8,12 @@ const StaticHeader = () => {
                 WaseGrid
             </div>
             <div className="flex gap-8 justify-center items-center">
-                <NavLink to="/courses" activeClassName="selected">
+                <NavLink to="/courses">
                     <div className={styles.header_page_links}>
                         Search
                     </div>
                 </NavLink>
-                <NavLink to="/timegrid" activeClassName="selected">
+                <NavLink to="/timegrid">
                     <div className={styles.header_page_links}>
                         Grid
                     </div>
