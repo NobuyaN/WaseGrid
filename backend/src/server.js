@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import notesRoutes from './routes/notesRoutes.js';
 import coursesRoutes from './routes/coursesRoutes.js';
 import connectDB from './config/db.js';
 import rateLimiter from './middleware/rateLimiter.js';
@@ -18,7 +17,6 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(rateLimiter);
-app.use("/api/notes", notesRoutes);
 app.use("/api/courses", coursesRoutes);
 
 connectDB().then(()=> {
